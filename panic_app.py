@@ -139,6 +139,6 @@ if page=="Panic Prediction":
 
 
         st.header("probability to get panic :")
-        st.text(c2[1])
+        st.text(c2[0][1])
         st.header("Predict output")
         st.text(c1[0])
