@@ -114,8 +114,8 @@ if page=="Panic Prediction":
 
         x6 = float(l[x6])
         x7 = float(x7) / 5.0
-        x8 = int(f[x8])
-        x9 = int(l[x9])
+        x8 = float(f[x8])
+        x9 = float(l[x9])
         x10 = float(x10) / 9.0
         x11 = float(l[x11])
         x12 = float(x12) / 5.0
