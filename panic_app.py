@@ -33,11 +33,6 @@ d = {'female': {0.0, 1.0},
 page = st.sidebar.selectbox("Select Activity", ["Panic Prediction",])
 st.sidebar.text(" \n")
 
-
-pkl_file1 = open('min_max_scaler1.pkl', 'rb')
-scaler = pickle.load(pkl_file1)
-
-
 pkl_file2 = open('rfc.pkl', 'rb')
 rfc = pickle.load(pkl_file2)
 
@@ -49,21 +44,21 @@ if page=="Panic Prediction":
 
     form = st.form(key='my_form2')
 
-    x1 = form.text_input(label='cci')
+    x1 = form.slider(label='Charlson Comorbidity Index (CCI)', min_value = 0, max_value = 20, step = 1, value = 4)
     form.text(" \n")
 
-    x2 = form.text_input(label='age')
-    form.text(" \n")
-
-
-    x3 = form.text_input(label='albumin')
+    x2 = form.text_input(label='Age', min_value = 18, max_value = 105, step = 1, value = 65)
     form.text(" \n")
 
 
-    x4 = form.text_input(label='bmi')
+    x3 = form.text_input(label='Albumin', min_value = 0.0, max_value = 10.0, step = 0.1, value = 3.0)
     form.text(" \n")
 
-    x5 = form.text_input(label='hemoglobin')
+
+    x4 = form.text_input(label='Body Mass Index (BMI)', min_value = 15.0, max_value = 60.0, step = 0.1, value = 26.0)
+    form.text(" \n")
+
+    x5 = form.text_input(label='Hemoglobin level (in g/dL)', min_value = 0.0, max_value = 150.0, step = 0.1, value = 13.0)
     form.text(" \n")
 
 
@@ -128,17 +123,16 @@ if page=="Panic Prediction":
 
         x14 = int(l[x14])
 
-        o = scaler.transform([[x1,x2,x3,x4,x5]])
-        x1,x2,x3,x4,x5 = o[0][0],o[0][1],o[0][2],o[0][3],o[0][4]
+        df = pd.DataFrame([x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14])
+        df = (df-df.min())/(df.max()-df.min())
+        
+        c1 = rfc.predict_proba(df)[:, 1] > 0.10571997452882279
 
-
-        c1 = rfc.predict([[x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14]])
-
-        c2 = rfc.predict_proba([[x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14]])
+        c2 = rfc.predict_proba(df)[:, 1]
 
 
 
         st.header("probability to get panic :")
-        st.text(c2[0][1])
+        st.text(c2)
         st.header("Predict output")
-        st.text(c1[0])
+        st.text(c1)
