@@ -123,15 +123,14 @@ if page=="Panic Prediction":
 
         x14 = float(l[x14])
 
-        df = pd.DataFrame([x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14])
         
-        c1 = rfc.predict_proba(df)[:, 1] > 0.10571997452882279
+        c1 = rfc.predict_proba([x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14])[:, 1]
 
-        c2 = rfc.predict_proba(df)[:, 1]
+        c2 = c1 > 0.10571997452882279
 
 
 
         st.header("probability to get panic :")
-        st.text(c2)
-        st.header("Predict output")
         st.text(c1)
+        st.header("Predict output")
+        st.text(c2)
