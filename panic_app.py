@@ -133,7 +133,7 @@ if page=="Panic Prediction":
         st.header("probability to have Anastomotic insufficiency :")
         st.text(f'{round(c1[0] * 100)}%')
         st.header("Predicted output(based on Binary Classification cut-off threshold)")
-        if c2[0] = False:
+        if c2[0] == False:
          value = "Does not have Anastomotic insufficiency "
         else : 
          value = "Does have Anastomotic insufficiency "
