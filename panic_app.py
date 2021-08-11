@@ -130,7 +130,7 @@ if page=="Panic Prediction":
 
 
 
-        st.header("probability to get panic :")
-        st.text(c1)
-        st.header("Predict output")
-        st.text(c2)
+        st.header("probability to have Anastomotic insufficiency :")
+        st.text(f'{np.round(c1[0],0)}%')
+        st.header("Predict output(based on Binary Classification cut-off threshold)")
+        st.text(c2[0])
