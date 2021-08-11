@@ -63,10 +63,10 @@ if page=="Panic Prediction":
 
 
 
-    x6 = form.selectbox('alcohol',["YES","NO"], key=1)
+    x6 = form.selectbox(' Alcohol abuse (>2 alcoholic beverages per day)',["YES","NO"], key=1)
     form.text(" \n")
 
-    x7 = form.selectbox('asa',list(d["asa"]),key=1)
+    x7 = form.selectbox('American Society of Anesthesiologists (ASA) Score',list(d["asa"]),key=1)
     form.text(" \n")
 
 
@@ -74,28 +74,28 @@ if page=="Panic Prediction":
     form.text(" \n")
 
 
-    x9 = form.selectbox('leukocytosis',["YES","NO"],key=1)
+    x9 = form.selectbox('Leukocytosis',["YES","NO"],key=1)
     form.text(" \n")
 
 
-    x10 = form.selectbox('nutrition',list(d['nutrition']),key=1)
+    x10 = form.selectbox('Nutritional status (NRS ≥ 3)',list(d['nutrition']),key=1)
     form.text(" \n")
 
-    x11 = form.selectbox('prior',["YES","NO"],key=1)
+    x11 = form.selectbox('Prior',["YES","NO"],key=1)
     form.text(" \n")
 
-    x12 = form.selectbox("renal",list(d["renal"]),key=1)
-    form.text(" \n")
-
-
-
-
-    x13 = form.selectbox("smoker",["YES","NO"],key=1)
+    x12 = form.selectbox("Renal function (CKD Stages G1 (normal) to G5)",list(d["renal"]),key=1)
     form.text(" \n")
 
 
 
-    x14 = form.selectbox("steroids",["YES","NO"],key=1)
+
+    x13 = form.selectbox(" Active smoking",["YES","NO"],key=1)
+    form.text(" \n")
+
+
+
+    x14 = form.selectbox("Preoperative steroid use (mg)",["YES","NO"],key=1)
     form.text(" \n")
 
 
