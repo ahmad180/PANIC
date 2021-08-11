@@ -47,18 +47,18 @@ if page=="Panic Prediction":
     x1 = form.slider(label='Charlson Comorbidity Index (CCI)', min_value = 0, max_value = 20, step = 1, value = 4)
     form.text(" \n")
 
-    x2 = form.text_input(label='Age', min_value = 18, max_value = 105, step = 1, value = 65)
+    x2 = form.slider(label='Age', min_value = 18, max_value = 105, step = 1, value = 65)
     form.text(" \n")
 
 
-    x3 = form.text_input(label='Albumin', min_value = 0.0, max_value = 10.0, step = 0.1, value = 3.0)
+    x3 = form.slider(label='Albumin', min_value = 0.0, max_value = 10.0, step = 0.1, value = 3.0)
     form.text(" \n")
 
 
-    x4 = form.text_input(label='Body Mass Index (BMI)', min_value = 15.0, max_value = 60.0, step = 0.1, value = 26.0)
+    x4 = form.slider(label='Body Mass Index (BMI)', min_value = 15.0, max_value = 60.0, step = 0.1, value = 26.0)
     form.text(" \n")
 
-    x5 = form.text_input(label='Hemoglobin level (in g/dL)', min_value = 0.0, max_value = 150.0, step = 0.1, value = 13.0)
+    x5 = form.slider(label='Hemoglobin level (in g/dL)', min_value = 0.0, max_value = 150.0, step = 0.1, value = 13.0)
     form.text(" \n")
 
 
