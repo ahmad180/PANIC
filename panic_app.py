@@ -106,25 +106,24 @@ if page=="Panic Prediction":
     if submit_button:
         l = {"YES":1,"NO":0}
         f = {"MALE":0,"FEMALE":1}
-        x1 =  float(x1)
-        x2 = float(x2)
-        x3 = float(x3)
-        x4 = float(x4)
-        x5 = float(x5)
+        x1 = (float(x1) - 0.0)/(18.0 - 0.0) 
+        x2 = (float(x2) - 16.0)/(101.0 - 16.0)
+        x3 = (float(x3) - 1.1)/(8.0 - 1.1)
+        x4 = (float(x4) - 15.0)/(59.5 - 15.0)
+        x5 = (float(x5) - 6.0)/(140.0 - 6.0)
 
-        x6 = int(l[x6])
-        x7 = int(x7)
+        x6 = float(l[x6])
+        x7 = float(x7) / 5.0
         x8 = int(f[x8])
         x9 = int(l[x9])
-        x10 = int(x10)
-        x11 = int(l[x11])
-        x12 = int(x12)
-        x13 = int(l[x13])
+        x10 = float(x10) / 9.0
+        x11 = float(l[x11])
+        x12 = float(x12) / 5.0
+        x13 = float(l[x13])
 
-        x14 = int(l[x14])
+        x14 = float(l[x14])
 
         df = pd.DataFrame([x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14])
-        df = (df-df.min())/(df.max()-df.min())
         
         c1 = rfc.predict_proba(df)[:, 1] > 0.10571997452882279
 
