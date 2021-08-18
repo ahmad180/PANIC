@@ -18,7 +18,7 @@ d = {'female': {0.0, 1.0},
  'leukocytosis': {0.0, 1.0},
  'steroids': {0.0, 1.0},
  'asa': {1, 2, 3, 4, 5},
- 'renal': {"G2", "G1", "G3", "G4", "G5"},
+ 'renal': {"G1", "G2", "G3", "G4", "G5"},
  'hand': {0.0, 1.0},
  'emergent': {0.0, 1.0},
  'laparoscopic': {1.0, 2.0, 3.0},
@@ -79,7 +79,7 @@ if page=="Panic Prediction":
     x11 = form.selectbox('Prior',["YES","NO"],key=1)
     form.text(" \n")
 
-    x12 = form.selectbox("Renal function (CKD Stages G1 (normal) to G5)",list(d["renal"]),key=1)
+    x12 = form.selectbox("Renal function (CKD Stages G1 (normal) to G5)",["G1", "G2", "G3", "G4", "G5"],key=1)
     form.text(" \n")
 
 
