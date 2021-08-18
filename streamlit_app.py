@@ -13,7 +13,7 @@ rfc = pickle.load(pkl_file2)
 d = {'female': {0.0, 1.0},
  'smoker': {0.0, 1.0},
  'alcohol': {0.0, 1.0},
- 'nutrition': {0.0, 1.0, 2.0, 3.0, 5.0, 6.0, 9.0},
+ 'nutrition': {0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0},
  'prior': {0.0, 1.0},
  'leukocytosis': {0.0, 1.0},
  'steroids': {0.0, 1.0},
@@ -73,7 +73,7 @@ if page=="Panic Prediction":
     form.text(" \n")
 
 
-    x10 = form.selectbox('Nutritional status(NRS Score)',list(d['nutrition']),key=1)
+    x10 = form.selectbox('Nutritional status(NRS-2002 Score)',list(d['nutrition']),key=1)
     form.text(" \n")
 
     x11 = form.selectbox('Prior',["YES","NO"],key=1)
@@ -101,6 +101,8 @@ if page=="Panic Prediction":
     if submit_button:
         l = {"YES":1,"NO":0}
         f = {"MALE":0,"FEMALE":1}
+        n = {0.0:0.0, 1.0:1.0,2.0:2.0,3.0:3.0,4.0:4.0,5.0:5.0,6.0:6.0,7.0:9.0}
+       
         x1 = (float(x1) - 0.0)/(18.0 - 0.0) 
         x2 = (float(x2) - 16.0)/(101.0 - 16.0)
         x3 = (float(x3) - 1.1)/(8.0 - 1.1)
@@ -111,7 +113,7 @@ if page=="Panic Prediction":
         x7 = float(x7) / 5.0
         x8 = float(f[x8])
         x9 = float(l[x9])
-        x10 = float(x10) / 9.0
+        x10 = float(n[x10]) / 9.0
         x11 = float(l[x11])
         x12 = float(x12) / 5.0
         x13 = float(l[x13])
