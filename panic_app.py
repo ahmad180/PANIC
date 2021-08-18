@@ -10,6 +10,27 @@ st.sidebar.text(" \n")
 pkl_file2 = open('rfc.pkl', 'rb')
 rfc = pickle.load(pkl_file2)
 
+d = {'female': {0.0, 1.0},
+ 'smoker': {0.0, 1.0},
+ 'alcohol': {0.0, 1.0},
+ 'nutrition': {0.0, 1.0, 2.0, 3.0, 5.0, 6.0, 9.0},
+ 'prior': {0.0, 1.0},
+ 'leukocytosis': {0.0, 1.0},
+ 'steroids': {0.0, 1.0},
+ 'asa': {1.0, 2.0, 3.0, 4.0, 5.0},
+ 'renal': {0.0, 1.0, 2.0, 3.0, 4.0, 5.0},
+ 'hand': {0.0, 1.0},
+ 'emergent': {0.0, 1.0},
+ 'laparoscopic': {1.0, 2.0, 3.0},
+ 'type': {1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0},
+ 'indication': {1.0, 2.0, 3.0, 4.0, 5.0, 6.0},
+ 'perforation ': {0.0, 1.0},
+ 'ct': {0.0, 1.0, 2.0, 3.0, 4.0},
+ 'cn': {0.0, 1.0, 2.0},
+ 'cm': {0.0, 1.0},
+ 'livermets': {0.0, 1.0},
+ 'ai': {0.0, 1.0}}
+
 
 if page=="Panic Prediction":
 
