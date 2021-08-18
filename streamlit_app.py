@@ -73,7 +73,7 @@ if page=="Panic Prediction":
     form.text(" \n")
 
 
-    x10 = form.selectbox('Nutritional status',list(d['nutrition']),key=1)
+    x10 = form.selectbox('Nutritional status(NRS Score)',list(d['nutrition']),key=1)
     form.text(" \n")
 
     x11 = form.selectbox('Prior',["YES","NO"],key=1)
