@@ -90,7 +90,7 @@ if page=="Panic Prediction":
 
 
 
-    x14 = form.selectbox("Preoperative steroid use (mg)",["YES","NO"],key=1)
+    x14 = form.selectbox("Preoperative steroid use",["YES","NO"],key=1)
     form.text(" \n")
 
 
