@@ -18,7 +18,7 @@ d = {'female': {0.0, 1.0},
  'leukocytosis': {0.0, 1.0},
  'steroids': {0.0, 1.0},
  'asa': {1, 2, 3, 4, 5},
- 'renal': {0.0, 1.0, 2.0, 3.0, 4.0, 5.0},
+ 'renal': {"G1", "G2", "G3", "G4", "G5"},
  'hand': {0.0, 1.0},
  'emergent': {0.0, 1.0},
  'laparoscopic': {1.0, 2.0, 3.0},
@@ -102,6 +102,7 @@ if page=="Panic Prediction":
         l = {"YES":1,"NO":0}
         f = {"MALE":0,"FEMALE":1}
         n = {0:0.0, 1:1.0,2:2.0,3:3.0,4:4.0,5:5.0,6:6.0,7:9.0}
+        r = {"G1":1.0, "G2":2.0, "G3":3.0, "G4":4.0, "G5":5.0}
        
         x1 = (float(x1) - 0.0)/(18.0 - 0.0) 
         x2 = (float(x2) - 16.0)/(101.0 - 16.0)
@@ -115,7 +116,7 @@ if page=="Panic Prediction":
         x9 = float(l[x9])
         x10 = float(n[x10]) / 9.0
         x11 = float(l[x11])
-        x12 = float(x12) / 5.0
+        x12 = float(r[x12]) / 5.0
         x13 = float(l[x13])
 
         x14 = float(l[x14])
