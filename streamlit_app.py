@@ -46,14 +46,14 @@ if page=="Panic Prediction":
     form.text(" \n")
 
 
-    x3 = form.slider(label='Albumin', min_value = 0.0, max_value = 10.0, step = 0.1, value = 3.0)
+    x3 = form.slider(label='Albumin', min_value = 0.0, max_value = 5.0, step = 0.1, value = 3.0)
     form.text(" \n")
 
 
     x4 = form.slider(label='Body Mass Index (BMI)', min_value = 15.0, max_value = 60.0, step = 0.1, value = 26.0)
     form.text(" \n")
 
-    x5 = form.slider(label='Hemoglobin level (in g/dL)', min_value = 0.0, max_value = 150.0, step = 0.1, value = 13.0)
+    x5 = form.slider(label='Hemoglobin level (in g/dL)', min_value = 0.0, max_value = 20.0, step = 0.1, value = 13.0)
     form.text(" \n")
 
 
@@ -76,7 +76,7 @@ if page=="Panic Prediction":
     x10 = form.selectbox('Nutritional status(NRS-2002 Score)',list(d['nutrition']),key=1)
     form.text(" \n")
 
-    x11 = form.selectbox('Prior',["YES","NO"],key=1)
+    x11 = form.selectbox('Prior Abdominal Surgery',["YES","NO"],key=1)
     form.text(" \n")
 
     x12 = form.selectbox("Renal function (CKD Stages G1 (normal) to G5)",["G1", "G2", "G3", "G4", "G5"],key=1)
